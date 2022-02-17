@@ -80,11 +80,13 @@ function activate(context) {
 			// We will no move on to the next variable declaration.
 			text = text.substring(index, text.length);
 
-			// Add a new variable to our list.
-			variables.push({
-				name : variableName,
-				content : variableContent
-			})
+			if(variableName != "" && variableName != " ") {
+				// Add a new variable to our list.
+				variables.push({
+					name : variableName,
+					content : variableContent
+				})
+			}			
 		}
 
 		// Sort the variables in alphabetic order
@@ -96,7 +98,11 @@ function activate(context) {
 		// Create the new variable declaration
 		// This will make sure to add an empty space after each variable.
 		variables.forEach(variable => {
-			newDocumentText += "variable \"" + variable.name + "\" " + variable.content + "\r\n" + "\r\n"
+
+			if(variable.name != "" && variable.name != " ") {
+				newDocumentText += "variable \"" + variable.name + "\" " + variable.content + "\r\n" + "\r\n"
+			}
+			
 		})
 
 		// Write the contents to the file 
