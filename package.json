@@ -2,7 +2,7 @@
   "name": "terraform-variable-sorter",
 	"displayName": "Terraform Variable Sorter",
 	"description": "Sorts terraform variables in variable.tf files",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.64.0"
 	},
@@ -10,15 +10,11 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:terraform-variable-sorter.helloWorld"
+        "onStartupFinished"
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [{
-            "command": "terraform-variable-sorter.helloWorld",
-            "title": "Hello World"
-
-		}]
+	
 	},
 	"scripts": {
 		"lint": "eslint .",
